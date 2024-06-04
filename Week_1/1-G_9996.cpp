@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int N;
+int n;
 string pat, file, pre, suf;
 string answer;
 
@@ -10,14 +10,14 @@ int main() {
     cin.tie();
     cout.tie();
 
-    cin >> N;
+    cin >> n;
     cin >> pat;
 
     int pos = pat.find('*');
     pre = pat.substr(0, pos);
     suf = pat.substr(pos + 1);
 
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < n; i++)
     {
         cin >> file;
 

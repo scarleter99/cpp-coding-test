@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int N;
+int n;
 string str;
 int answer;
 
@@ -10,9 +10,9 @@ int main() {
     cin.tie();
     cout.tie();
 
-    cin >> N;
+    cin >> n;
 
-    while(N--)
+    while(n--)
     {
         cin >> str;
         stack<char> alphaStk;

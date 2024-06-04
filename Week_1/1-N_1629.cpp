@@ -2,21 +2,21 @@
 using namespace std;
 typedef long long ll;
 
-ll A, B, C;
+ll a, b, c;
 ll answer;
 
 ll algo(ll b)
 {
     if (b == 1)
     {
-        return A % C;
+        return a % c;
     }
 
-    ll ret = (algo(b / 2) * algo(b / 2)) % C;
+    ll ret = (algo(b / 2) * algo(b / 2)) % c;
 
     if (b % 2)
     {
-        ret = (ret * A) % C;
+        ret = (ret * a) % c;
     }
 
     return ret;
@@ -27,9 +27,9 @@ int main() {
     cin.tie();
     cout.tie();
     
-    cin >> A >> B >> C;
+    cin >> a >> b >> c;
     
-    answer = algo(B);
+    answer = algo(b);
 
     cout << answer;
 

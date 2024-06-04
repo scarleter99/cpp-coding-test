@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int N, M;
+int n, m;
 vector<int> ings;
 int answer;
 
@@ -10,11 +10,11 @@ int main() {
     cin.tie();
     cout.tie();
 
-    cin >> N >> M;
+    cin >> n >> m;
 
-    ings = vector<int>(N);
+    ings = vector<int>(n);
 
-    for(int i = 0; i < N; i++)
+    for(int i = 0; i < n; i++)
     {
         cin >> ings[i];
 
@@ -25,7 +25,7 @@ int main() {
                 continue;
             }
             
-            if (ings[i] + ings[j] == M)
+            if (ings[i] + ings[j] == m)
             {
                 answer++;
                 ings[i] = -1;

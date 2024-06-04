@@ -9,7 +9,7 @@ int main() {
     cin.tie();
     cout.tie();
 
-    while(scanf("%d", &n) != EOF){
+    while(cin >> n){
         num = 1;
         answer = 1;
 

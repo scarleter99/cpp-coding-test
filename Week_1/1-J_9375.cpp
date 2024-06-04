@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int tc, n;
+int t, n;
 string cloth, clothKind;
 int answer;
 
@@ -10,9 +10,9 @@ int main() {
     cin.tie();
     cout.tie();
 
-    cin >> tc;
+    cin >> t;
 
-    while(tc--)
+    while(t--)
     {
         map<string, int> clothKindMap;
 

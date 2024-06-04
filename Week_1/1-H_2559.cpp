@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int N, K, temp;
+int n, k, temp;
 int maxSum = -10000001;
 vector<int> tempSums;
 
@@ -10,18 +10,18 @@ int main() {
     cin.tie();
     cout.tie();
 
-    cin >> N >> K;
-    tempSums = vector<int>(N + 1, 0);
+    cin >> n >> k;
+    tempSums = vector<int>(n + 1, 0);
 
-    for (int i = 1; i <= N; i++)
+    for (int i = 1; i <= n; i++)
     {
         cin >> temp;
         tempSums[i] = tempSums[i - 1] + temp;
     }
 
-    for (int i = K; i <= N; i++)
+    for (int i = k; i <= n; i++)
     {
-        maxSum = max(maxSum, tempSums[i] - tempSums[i - K]);
+        maxSum = max(maxSum, tempSums[i] - tempSums[i - k]);
     }
 
     cout << maxSum;
