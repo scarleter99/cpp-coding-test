@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, maxHeight, safe, maxSafe;
+int n, maxHeight, safe;
 int adj[104][104];
 bool visited[104][104];
 int answer;
@@ -33,8 +33,8 @@ int algo(int h, int y, int x) {
 
 int main() {
     ios_base::sync_with_stdio(false);
-    cin.tie();
-    cout.tie();
+    cin.tie(NULL);
+    cout.tie(NULL);
 
     cin >> n;
 
@@ -64,10 +64,10 @@ int main() {
             }
         }
 
-        maxSafe = max(maxSafe, safe);
+        answer = max(answer, safe);
     }
     
-    cout << maxSafe;
+    cout << answer;
 
     return 0;
 }

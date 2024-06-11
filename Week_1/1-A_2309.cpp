@@ -27,8 +27,8 @@ int algo() {
  
 int main() {
     ios_base::sync_with_stdio(false);
-    cin.tie();
-    cout.tie();
+    cin.tie(NULL);
+    cout.tie(NULL);
 
     for (int i = 1; i < 10; i++)
     {
