@@ -5,7 +5,7 @@ int n;
 char adj[68][68];
 string answer;
 
-int algo(int y, int x, int size)
+void algo(int y, int x, int size)
 {
     char temp = adj[y][x];
 
@@ -22,14 +22,11 @@ int algo(int y, int x, int size)
                 algo(y + nSize, x, nSize);
                 algo(y + nSize, x + nSize, nSize);
                 answer += ")";
-                return 0;
             }
         }
     }
     
     answer += temp;
-
-    return 0;
 }
 
 int main() {

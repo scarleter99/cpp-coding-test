@@ -2,7 +2,7 @@
 using namespace std;
 
 int n, m, y, x;
-string line;
+string s;
 int adj[104][104];
 int visited[104][104];
 queue<pair<int, int>> q;
@@ -19,10 +19,10 @@ int main() {
 
     for (int i = 0; i < n; i++)
     {
-        cin >> line;
+        cin >> s;
         for (int j = 0; j < m; j++)
         {
-            adj[i][j] = line[j] - '0';
+            adj[i][j] = s[j] - '0';
         }
     }
 

@@ -5,7 +5,7 @@ vector<int> heights(10);
 vector<int> heightSums(10);
 vector<int> lierIdxs(2);
 
-int algo() {
+void algo() {
     int diff = heightSums[9] - 100;
     sort(heights.begin(), heights.end());
 
@@ -17,12 +17,9 @@ int algo() {
             {
                 lierIdxs[0] = i;
                 lierIdxs[1] = j;
-                return 0;
             }
         }
     }
-
-    return 0;
 }
  
 int main() {
