@@ -9,7 +9,7 @@ int answer;
 int dy[] = {-1, 0, 1, 0};
 int dx[] = {0, 1, 0, -1};
 
-int algo(int h, int y, int x) {
+void algo(int h, int y, int x) {
     visited[y][x] = true;
 
     for (int i = 0; i < 4; i ++)
@@ -27,8 +27,6 @@ int algo(int h, int y, int x) {
             algo(h, ny, nx);
         }
     }
-
-    return 0;
 }
 
 int main() {

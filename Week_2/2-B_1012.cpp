@@ -9,7 +9,7 @@ bool visited[54][54];
 int dy[] = {-1, 0, 1, 0};
 int dx[] = {0, 1, 0, -1};
 
-int algo(int y, int x)
+void algo(int y, int x)
 {
     visited[y][x] = true;
 
@@ -28,8 +28,6 @@ int algo(int y, int x)
             algo(ny, nx);
         }
     }
-
-    return 0;
 }
 
 int main() {
