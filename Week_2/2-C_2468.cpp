@@ -9,7 +9,7 @@ int answer;
 int dy[] = {-1, 0, 1, 0};
 int dx[] = {0, 1, 0, -1};
 
-void algo(int h, int y, int x) {
+void dfs(int h, int y, int x) {
     visited[y][x] = true;
 
     for (int i = 0; i < 4; i ++)
@@ -24,7 +24,7 @@ void algo(int h, int y, int x) {
 
         if (adj[ny][nx] > h && visited[ny][nx] == false)
         {
-            algo(h, ny, nx);
+            dfs(h, ny, nx);
         }
     }
 }
@@ -56,7 +56,7 @@ int main() {
             {
                 if (adj[i][j] > h && visited[i][j] == false)
                 {
-                    algo(h, i, j);
+                    dfs(h, i, j);
                     safe++;
                 }
             }

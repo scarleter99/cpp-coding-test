@@ -9,7 +9,7 @@ vector<int> areaSizes;
 int dy[] = {-1, 0, 1, 0};
 int dx[] = {0, 1, 0, -1};
 
-void algo(int y, int x) {
+void dfs(int y, int x) {
     visited[y][x] = true;
     areaSize++;
 
@@ -25,7 +25,7 @@ void algo(int y, int x) {
 
         if (adj[ny][nx] == 0 && visited[ny][nx] == false)
         {
-            algo(ny, nx);
+            dfs(ny, nx);
         }
     }
 }
@@ -58,7 +58,7 @@ int main() {
             {
                 //cout << j << " " <<i << "\n";
                 areaSize = 0;
-                algo(i, j);
+                dfs(i, j);
                 areaNum++;
                 areaSizes.push_back(areaSize);
             }

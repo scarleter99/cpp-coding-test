@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, m, safe, safeTemp, maxSafe;
+int n, m, safeTemp, maxSafe, safe = -3;
 int adj[12][12], adjTemp[12][12];
 vector<pair<int, int>> safeZone;
 pair<int, int> wall1;
@@ -11,7 +11,7 @@ pair<int, int> wall3;
 int dy[] = {-1, 0, 1, 0};
 int dx[] = {0, 1, 0, -1};
 
-void algo(int y, int x)
+void dfs(int y, int x)
 {
     adjTemp[y][x] = 2;
 
@@ -20,16 +20,15 @@ void algo(int y, int x)
         int ny = y + dy[i];
         int nx = x + dx[i];
 
-        if (ny < 0 || nx < 0 || ny > n || nx > m)
+        if (ny < 0 || nx < 0 || ny >= n || nx >= m)
         {
             continue;
         }
 
         if (adjTemp[ny][nx] == 0)
         {
-            cout << ny << ":" << nx << ", ";
             safeTemp--;
-            algo(ny, nx);
+            dfs(ny, nx);
         }
     }
 }
@@ -66,9 +65,6 @@ int main() {
                 {
                     copy(adj[l], adj[l] + m, adjTemp[l]);
                 }
-                cout << safeZone[i].first << "&" << safeZone[i].second << "/";
-                cout << safeZone[j].first << "&" << safeZone[j].second << "/";
-                cout << safeZone[k].first << "&" << safeZone[k].second << "/";
 
                 adjTemp[safeZone[i].first][safeZone[i].second] = 1;
                 adjTemp[safeZone[j].first][safeZone[j].second] = 1;
@@ -80,28 +76,17 @@ int main() {
                     {
                         if (adjTemp[y][x] == 2)
                         {
-                            algo(y, x);
+                            dfs(y, x);
                         }
                     }
                 }
 
-                cout << safeTemp << "\n";
                 maxSafe = max(maxSafe, safeTemp);
             }
         }
     }
 
-    cout << safe << "\n";
     cout << maxSafe;
-
-    // for (int i = 0; i < n; i++)
-    // {
-    //     for (int j = 0; j < m; j++)
-    //     {
-    //         cout << adjTemp[i][j] << " ";
-    //     }
-    //     cout << "\n";
-    // }
     
     return 0;
 }

@@ -9,7 +9,7 @@ bool visited[54][54];
 int dy[] = {-1, 0, 1, 0};
 int dx[] = {0, 1, 0, -1};
 
-void algo(int y, int x)
+void dfs(int y, int x)
 {
     visited[y][x] = true;
 
@@ -25,7 +25,7 @@ void algo(int y, int x)
 
         if (adj[ny][nx] == 1 && !visited[ny][nx])
         {
-            algo(ny, nx);
+            dfs(ny, nx);
         }
     }
 }
@@ -58,7 +58,7 @@ int main() {
             {
                 if (adj[i][j] == 1 && !visited[i][j])
                 {
-                    algo(i, j);
+                    dfs(i, j);
                     answer++;
                 }
             }

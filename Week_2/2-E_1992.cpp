@@ -5,7 +5,7 @@ int n;
 char adj[68][68];
 string answer;
 
-void algo(int y, int x, int size)
+void dfs(int y, int x, int size)
 {
     char temp = adj[y][x];
 
@@ -17,10 +17,10 @@ void algo(int y, int x, int size)
             {
                 answer += "(";
                 int nSize = size / 2;
-                algo(y, x, nSize);
-                algo(y, x + nSize, nSize);
-                algo(y + nSize, x, nSize);
-                algo(y + nSize, x + nSize, nSize);
+                dfs(y, x, nSize);
+                dfs(y, x + nSize, nSize);
+                dfs(y + nSize, x, nSize);
+                dfs(y + nSize, x + nSize, nSize);
                 answer += ")";
             }
         }
@@ -46,7 +46,7 @@ int main() {
         }
     }
 
-    algo(0, 0, n);
+    dfs(0, 0, n);
 
     cout << answer;
 
