@@ -30,7 +30,6 @@ void dfs(int y, int x)
             }
         }
     }
-
 }
 
 int main() {
@@ -60,14 +59,6 @@ int main() {
         lastCnt = cnt;
         ti++;
 
-        // for (int i = 0; i < n; i++) {
-        //     for (int j = 0; j < m; j++) {
-        //         cout << adj[i][j] << " ";
-        //     }
-        //     cout << "\n";
-        // }
-        // cout << "\n";
-
         dfs(0, 0);
 
         for (int i = 0; i < n; i++) {
@@ -75,7 +66,6 @@ int main() {
         }
     } 
 
-    //cout << cnt << "\n";
     cout << ti << "\n";
     cout << lastCnt;
 
