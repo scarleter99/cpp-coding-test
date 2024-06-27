@@ -17,50 +17,43 @@ int main() {
 
     cin >> n >> m;
 
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++){
         string str;
         cin >> str;
 
-        for (int j = 0; j < m; j++)
-        {
+        for (int j = 0; j < m; j++){
             adj[i][j] = str[j];
 
-            if (adj[i][j] == 'L')
-            {
+            if (adj[i][j] == 'L'){
                 lands.push_back({i, j});
             }
         }
     }
 
-    for (int i = 0; i < lands.size(); i++)
-    {
+    for (int i = 0; i < lands.size(); i++){
         int y = lands[i].first;
         int x = lands[i].second;
 
         queue<pair<int, int>> q;
         q.push({y, x});
 
-        memset(visited, 0, sizeof(visited)); 
+        //memset(visited, 0, sizeof(visited)); 
+        fill(&visited[0][0], &visited[0][0] + 54 * 54, 0);
         visited[y][x] = 1;
 
-        while(!q.empty())
-        {
+        while(!q.empty()){
             tie(y, x) = q.front();
             q.pop();
 
-            for (int i = 0; i < 4; i++)
-            {
+            for (int i = 0; i < 4; i++){
                 int ny = y + dy[i];
                 int nx = x + dx[i];
 
-                if (ny < 0 || nx < 0 || ny >= n || nx >= m || visited[ny][nx])
-                {
+                if (ny < 0 || nx < 0 || ny >= n || nx >= m || visited[ny][nx]){
                     continue;
                 }
 
-                if (adj[ny][nx] == 'L')
-                {
+                if (adj[ny][nx] == 'L'){
                     q.push({ny, nx});
                     visited[ny][nx] = visited[y][x] + 1;
 

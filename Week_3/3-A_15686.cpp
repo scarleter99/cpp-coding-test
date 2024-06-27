@@ -4,12 +4,12 @@ using namespace std;
 int n, m;
 int adj[54][54];
 vector<pair<int, int>> homes, chickens;
-vector<vector<int>> banChickens;
+vector<vector<int>> banChickenLists;
 int answer = numeric_limits<int>::max();
 
 void combi(int start, vector<int> v){
     if(v.size() == m){
-        banChickens.push_back(v);
+        banChickenLists.push_back(v);
         return;
     }
 
@@ -21,26 +21,22 @@ void combi(int start, vector<int> v){
     return;
 }
 
-int main() {
+int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
 
     cin >> n >> m;
 
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < n; j++){
             cin >> adj[i][j];
 
-            if (adj[i][j] == 1)
-            {
+            if (adj[i][j] == 1){
                 homes.push_back(make_pair(i, j));
             }
 
-            if (adj[i][j] == 2)
-            {
+            if (adj[i][j] == 2){
                 chickens.push_back(make_pair(i, j));
             }
         }
@@ -49,11 +45,11 @@ int main() {
     vector<int> v;
     combi(-1, v);
 
-    for(vector<int> banChicken : banChickens){
+    for(vector<int> banChickenList : banChickenLists){
         int temp = 0;
         for(pair<int, int> home : homes){
             int _min = numeric_limits<int>::max();
-            for(int i : banChicken){
+            for(int i : banChickenList){
                 int _dist = abs(home.first - chickens[i].first) + abs(home.second - chickens[i].second);
                 _min = min(_min, _dist);
             }
