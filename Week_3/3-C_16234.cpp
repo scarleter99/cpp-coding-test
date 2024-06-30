@@ -8,7 +8,7 @@ int answer;
 int dy[] = {-1, 0, 1, 0};
 int dx[] = {0, 1, 0, -1};
 
-void algo(int y, int x, vector<pair<int, int>>& v)
+void dfs(int y, int x, vector<pair<int, int>>& v)
 {
     visited[y][x] = 1;
     sum += adj[y][x];
@@ -25,7 +25,7 @@ void algo(int y, int x, vector<pair<int, int>>& v)
         
         int sub = abs(adj[ny][nx] - adj[y][x]);
         if (sub >= l && sub <= r){
-            algo(ny, nx, v);
+            dfs(ny, nx, v);
             flag = 1;
         }
     }
@@ -56,7 +56,7 @@ int main(){
                     cnt = 0;
                     vector<pair<int, int>> v;
 
-                    algo(i, j, v);
+                    dfs(i, j, v);
 
                     int temp = sum / cnt;
                     for (pair<int, int> p : v)
