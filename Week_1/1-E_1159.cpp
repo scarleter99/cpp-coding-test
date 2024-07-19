@@ -17,7 +17,8 @@ int main() {
     {
         cin >> name;
 
-        if (++alphaCnts[name[0] - 'a'] == 5)
+        alphaCnts[name[0] - 'a']++;
+        if (alphaCnts[name[0] - 'a'] == 5)
         {
             answers.push_back(name[0]);
         }

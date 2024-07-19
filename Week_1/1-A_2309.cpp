@@ -1,49 +1,38 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-
-vector<int> heights(10);
-vector<int> heightSums(10);
-vector<int> lierIdxs(2);
-
-void algo() {
-    int diff = heightSums[9] - 100;
-    sort(heights.begin(), heights.end());
-
-    for (int i = 1; i < 10; i++)
-    {
-        for (int j = 1; j < 10; j++)
-        {
-            if (heights[i] + heights[j] == diff)
-            {
-                lierIdxs[0] = i;
-                lierIdxs[1] = j;
-            }
-        }
+int a[9]; 
+int n = 9, r = 7; 
+void solve(){  
+    int sum = 0; 
+    for(int i = 0; i < r; i++){
+        sum += a[i];  
     }
+    if(sum == 100){ 
+      sort(a, a + 7);  
+      for(int i = 0; i < r; i++) cout << a[i] << "\n"; 
+      exit(0);
+    } 
 }
- 
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-
-    for (int i = 1; i < 10; i++)
-    {
-        cin >> heights[i];
-        heightSums[i] = heights[i] + heightSums[i - 1];
+void print(){
+  for(int i = 0; i < r; i++) cout << a[i] << " "; 
+  cout << '\n';
+}
+void makePermutation(int n, int r, int depth){
+    if(r == depth){ 
+        solve();
+        return;
     }
-
-    algo();
-
-    for (int i = 1; i < 10; i++)
-    {
-        if (find(lierIdxs.begin(), lierIdxs.end(), i) != lierIdxs.end())
-        {
-            continue;
-        }
-
-        cout << heights[i] << "\n";
+    for(int i = depth; i < n; i++){
+        swap(a[i], a[depth]);
+        makePermutation(n, r, depth + 1);
+        swap(a[i], a[depth]);
     }
-
+    return;
+}
+int main(){
+    for(int i = 0; i < n; i++){
+        cin >> a[i];
+    } 
+    makePermutation(n, r, 0);
     return 0;
 }
