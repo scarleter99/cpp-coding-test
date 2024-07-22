@@ -22,6 +22,7 @@ void dfs(int y, int x, int size)
                 dfs(y + nSize, x, nSize);
                 dfs(y + nSize, x + nSize, nSize);
                 answer += ")";
+                return;
             }
         }
     }

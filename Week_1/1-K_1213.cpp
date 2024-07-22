@@ -3,7 +3,6 @@ using namespace std;
 
 string name;
 vector<int> alphaCnts(200);
-vector<char> pellin;
 char mid;
 int flag;
 string answer;

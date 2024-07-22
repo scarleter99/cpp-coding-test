@@ -18,12 +18,12 @@ void dfs(int y, int x)
         int ny = y + dy[i];
         int nx = x + dx[i];
         
-        if (ny < 0 || nx < 0 || ny >= n || nx >= m)
+        if (ny < 0 || nx < 0 || ny >= n || nx >= m || visited[ny][nx])
         {
             continue;
         }
 
-        if (adj[ny][nx] == 1 && !visited[ny][nx])
+        if (adj[ny][nx] == 1)
         {
             dfs(ny, nx);
         }

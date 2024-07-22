@@ -17,12 +17,12 @@ void dfs(int h, int y, int x) {
         int ny = y + dy[i];
         int nx = x + dx[i];
 
-        if (ny < 0 || nx < 0 || ny >= n || nx >= n)
+        if (ny < 0 || nx < 0 || ny >= n || nx >= n || visited[ny][nx])
         {
             continue;
         }
 
-        if (adj[ny][nx] > h && visited[ny][nx] == false)
+        if (adj[ny][nx] > h)
         {
             dfs(h, ny, nx);
         }
