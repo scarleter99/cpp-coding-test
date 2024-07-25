@@ -1,20 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, m, cnt, maxCnt, answerCnt;
+int n, m, cnt, maxCnt;
 vector<int> adj[10004];
 int visited[10004];
 vector<int> answer;
 
-void algo(int com)
-{
+void algo(int com){
     visited[com] = 1;
     cnt++;
 
-    for (int i : adj[com])
-    {
-        if (!visited[i])
-        {
+    for (int i : adj[com]){
+        if (!visited[i]){
             algo(i);
         }
     }
@@ -27,37 +24,30 @@ int main() {
 
     cin >> n >> m;
 
-    for (int i = 0; i < m; i++)
-    {
+    for (int i = 0; i < m; i++){
         int a, b;
         cin >> a >> b;
         adj[b].push_back(a);
     }
 
-    for (int i = 1; i <= n; i++)
-    {
+    for (int i = 1; i <= n; i++){
         cnt = 0;
         fill(visited, visited + n + 1, 0);
 
         algo(i);
 
-        if (cnt > maxCnt)
-        {
+        if (cnt > maxCnt){
+            answer.clear();
             answer.push_back(i);
-            answerCnt = 1;
             maxCnt = cnt;
         }
-
-        else if (cnt == maxCnt)
-        {
+        else if (cnt == maxCnt){
             answer.push_back(i);
-            answerCnt++;
         }
     }
-    while (answerCnt)
-    {
-        cout << answer[answer.size() - answerCnt] << " ";
-        answerCnt--;
+
+    for (int i : answer){
+        cout << i << " ";
     }
 
     return 0;

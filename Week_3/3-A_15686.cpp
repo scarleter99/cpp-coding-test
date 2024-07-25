@@ -33,11 +33,11 @@ int main(){
             cin >> adj[i][j];
 
             if (adj[i][j] == 1){
-                homes.push_back(make_pair(i, j));
+                homes.push_back({i, j});
             }
 
             if (adj[i][j] == 2){
-                chickens.push_back(make_pair(i, j));
+                chickens.push_back({i, j});
             }
         }
     }

@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, m, cnt, lastCnt, ti;
+int n, m, cnt, lastCnt;
 int adj[104][104], nAdj[104][104], visited[104][104];
+int answer;
 
 int dy[] = {-1, 0, 1, 0};
 int dx[] = {0, 1, 0, -1};
@@ -11,8 +12,7 @@ void dfs(int y, int x)
 {
     visited[y][x] = 1;
 
-    for (int i = 0; i < 4; i++)
-    {
+    for (int i = 0; i < 4; i++) {
         int ny = y + dy[i];
         int nx = x + dx[i];
 
@@ -53,11 +53,10 @@ int main() {
     }
     
     int t = 3;
-    while(cnt > 0) 
-    {
+    while(cnt > 0) {
         fill(&visited[0][0], &visited[0][0] + 104 * 104, 0);
         lastCnt = cnt;
-        ti++;
+        answer++;
 
         dfs(0, 0);
 
@@ -66,7 +65,7 @@ int main() {
         }
     } 
 
-    cout << ti << "\n";
+    cout << answer << "\n";
     cout << lastCnt;
 
     return 0;

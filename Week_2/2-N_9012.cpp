@@ -12,34 +12,27 @@ int main() {
 
     cin >> t;
 
-    while(t--)
-    {
+    while(t--){
         cin >> s;
 
         int temp = 0;
-        for (char c : s)
-        {
-            if (c == '(')
-            {
+        for (char c : s){
+            if (c == '('){
                 temp++;
             }
-            else if (c == ')')
-            {
+            else if (c == ')'){
                 temp--;
             }
 
-            if (temp < 0)
-            {
+            if (temp < 0){
                 break;
             }
         }
 
-        if (temp == 0)
-        {
+        if (temp == 0){
             cout << "YES\n";
         }
-        else
-        {
+        else{
             
             cout << "NO\n";
         }

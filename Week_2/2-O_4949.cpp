@@ -9,53 +9,41 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    while(getline(cin, line))
-    {
-        if (line == ".")
-        {
+    while(getline(cin, line)){
+        if (line == "."){
             break;
         }
 
         flag = true;
         stack<char> st;
-        for (char c : line)
-        {
-            if (c == '[' || c == '(')
-            {
+        for (char c : line){
+            if (c == '[' || c == '('){
                 st.push(c);
             }
-            else if (c == ']')
-            {
-                if (!st.empty() && '[' == st.top())
-                {
+            else if (c == ']'){
+                if (st.size() && '[' == st.top()){
                     st.pop();
                 }
-                else
-                {
+                else{
                     flag = false;
                     break;
                 }
             }
-            else if (c == ')')
-            {
-                if (!st.empty() && '(' == st.top())
-                {
+            else if (c == ')'){
+                if (st.size() && '(' == st.top()){
                     st.pop();
                 }
-                else
-                {
+                else{
                     flag = false;
                     break;
                 }
             }
         }
 
-        if (flag && st.empty())
-        {
+        if (flag && st.empty()){
             cout << "yes\n";
         }
-        else
-        {
+        else{
             cout << "no\n";
         }
     }
