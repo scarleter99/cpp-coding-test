@@ -29,7 +29,7 @@ int main() {
             answer += l - temp;
             l -= l - temp;
         }
-        else if(temp >= r)
+        else if(temp > r)
         {
             answer += temp - r;
             l += temp - r;

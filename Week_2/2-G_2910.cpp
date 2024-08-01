@@ -6,12 +6,12 @@ vector<pair<int, int>> v;
 map<int, int> mp, mp_first; 
 
 bool cmp(pair<int,int> a, pair<int, int> b){
-	if(a.first == b.first)
+	if(a.second == b.second)
     {
-		return mp_first[a.second] < mp_first[b.second];
+		return mp_first[a.first] < mp_first[b.first];
 	}
 
-	return a.first > b.first;
+	return a.second > b.second;
 }
 
 int main() {
@@ -34,16 +34,16 @@ int main() {
 
     for (auto it : mp)
     {
-        v.push_back({it.second, it.first});
+        v.push_back({it.first, it.second});
     }
 
     sort(v.begin(), v.end(), cmp);
 
     for(auto i : v)
     {
-        for (int j = 0; j < i.first; j++)
+        for (int j = 0; j < i.second; j++)
         {
-            cout << i.second << " ";
+            cout << i.first << " ";
         }
     }
 

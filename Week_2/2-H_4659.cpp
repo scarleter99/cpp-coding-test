@@ -42,6 +42,7 @@ int main() {
                 if (vowSeq >= 3)
                 {
                     flag = true;
+                    break;
                 }
             }
             else
@@ -52,15 +53,14 @@ int main() {
                 if (conSeq >= 3)
                 {
                     flag = true;
+                    break;
                 }
             }
 
-            if (i > 0 && last == temp && (last != 'o' && last != 'e'))
+            if (last == temp && !(last == 'o' || last == 'e'))
             {
-                if (last != 'o' && last != 'e')
-                {
-                    flag = true;
-                }
+                flag = true;
+                break;
             }
 
             last = temp;
