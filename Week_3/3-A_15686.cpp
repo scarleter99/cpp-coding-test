@@ -4,12 +4,12 @@ using namespace std;
 int n, m;
 int adj[54][54];
 vector<pair<int, int>> homes, chickens;
-vector<vector<int>> banChickenLists;
-int answer = numeric_limits<int>::max();
+vector<vector<int>> remainChickenLists;
+int answer = 987654321;
 
 void combi(int start, vector<int> v){
     if(v.size() == m){
-        banChickenLists.push_back(v);
+        remainChickenLists.push_back(v);
         return;
     }
 
@@ -45,11 +45,11 @@ int main(){
     vector<int> v;
     combi(-1, v);
 
-    for(vector<int> banChickenList : banChickenLists){
+    for(vector<int> remainChickenList : remainChickenLists){
         int temp = 0;
         for(pair<int, int> home : homes){
-            int _min = numeric_limits<int>::max();
-            for(int i : banChickenList){
+            int _min = 987654321;
+            for(int i : remainChickenList){
                 int _dist = abs(home.first - chickens[i].first) + abs(home.second - chickens[i].second);
                 _min = min(_min, _dist);
             }

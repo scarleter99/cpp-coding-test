@@ -3,7 +3,6 @@ using namespace std;
 
 int n, k;
 int visited[200004], history[200004];
-vector<int> v;
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -35,7 +34,7 @@ int main() {
     cout << visited[k] - 1 << "\n";
 
     int now = k;
-
+    vector<int> v;
     for(int i = k; i != n; i = history[i]){
         v.push_back(i);
     }

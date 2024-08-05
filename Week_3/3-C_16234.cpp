@@ -8,12 +8,12 @@ int answer;
 int dy[] = {-1, 0, 1, 0};
 int dx[] = {0, 1, 0, -1};
 
-void dfs(int y, int x, vector<pair<int, int>>& v)
+void dfs(int y, int x, vector<pair<int, int>>& alli)
 {
     visited[y][x] = 1;
     sum += adj[y][x];
     cnt++;
-    v.push_back({y, x});
+    alli.push_back({y, x});
 
     for (int i = 0; i < 4; i++){
         int ny = y + dy[i];
@@ -25,7 +25,7 @@ void dfs(int y, int x, vector<pair<int, int>>& v)
         
         int sub = abs(adj[ny][nx] - adj[y][x]);
         if (sub >= l && sub <= r){
-            dfs(ny, nx, v);
+            dfs(ny, nx, alli);
             flag = 1;
         }
     }
@@ -44,7 +44,6 @@ int main(){
         }
     }
 
-    
     do {
         flag = 0;
         memset(visited, 0, sizeof(visited));
@@ -54,12 +53,12 @@ int main(){
                 {
                     sum = 0;
                     cnt = 0;
-                    vector<pair<int, int>> v;
+                    vector<pair<int, int>> alli;
 
-                    dfs(i, j, v);
+                    dfs(i, j, alli);
 
                     int temp = sum / cnt;
-                    for (pair<int, int> p : v)
+                    for (pair<int, int> p : alli)
                     {
                         adj[p.first][p.second] = temp;
                     }
