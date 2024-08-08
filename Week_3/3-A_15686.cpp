@@ -57,6 +57,7 @@ int main(){
         }
         answer = min(answer, temp);
     }
+    
     cout << answer << "\n";
 
     return 0;

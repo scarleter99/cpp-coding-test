@@ -18,8 +18,7 @@ bool cmp(int a, int b, char oper){
 }
 
 void dfs(int idx){
-    if (idx > k)
-    {
+    if (idx > k){
         v.push_back(str);
         return;
     }
