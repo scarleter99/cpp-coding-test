@@ -58,24 +58,27 @@ int main() {
         }
     }
 
-    for(int i = 0; i < m; i++){
-        for(int j = 0; j < n; j++){
-            if(i + 1 < m){
-                int a = visited[i + 1][j]; 
-                int b = visited[i][j]; 
-                if(a != b){ 
-                    big = max(big, roomSize[a] + roomSize[b]); 
+    for (int i = 0; i < m; i++){
+        for (int j = 0; j < n; j++){
+            if (i + 1 < m){
+                int a = visited[i + 1][j];
+                int b = visited[i][j];
+
+                if (a != b){
+                    big = max(big, roomSize[a] + roomSize[b]);
                 }
             }
-            if(j + 1 < n){
-                int a = visited[i][j + 1]; 
-                int b = visited[i][j]; 
-                if(a != b){ 
-                    big = max(big, roomSize[a] + roomSize[b]); 
+
+            if (j + 1 < n){
+                int a = visited[i][j + 1];
+                int b = visited[i][j];
+                
+                if (a != b){
+                    big = max(big, roomSize[a] + roomSize[b]);
                 }
-            } 
-        } 
-    } 
+            }
+        }
+    }
 
     cout << now << "\n" << roomMax << "\n" << big << "\n";
 
