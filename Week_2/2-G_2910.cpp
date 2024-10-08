@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, c, a[1004];
+int n, c;
 vector<pair<int, int>> v; 
 map<int, int> mp, mp_first; 
 
@@ -23,12 +23,13 @@ int main() {
 
     for (int i = 0; i < n; i++)
     {
-        cin >> a[i];
-        mp[a[i]]++;
+        int temp;
+        cin >> temp;
+        mp[temp]++;
         
-        if(mp_first[a[i]] == 0) 
+        if(mp_first[temp] == 0) 
         {
-            mp_first[a[i]] = i + 1; 
+            mp_first[temp] = i + 1; 
         }
     }
 

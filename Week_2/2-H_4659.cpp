@@ -6,8 +6,11 @@ int vowSeq, conSeq;
 bool haveVow, flag;
 int last;
 
+char vowList[] = {'a', 'e', 'i', 'o', 'u'};
+
 bool isVow(int idx){
-	return (idx == 'a' || idx == 'e' || idx == 'i' || idx == 'o' || idx == 'u');
+    return find(vowList, vowList + 5, idx) != vowList + 5;
+	//return (idx == 'a' || idx == 'e' || idx == 'i' || idx == 'o' || idx == 'u');
 }
 
 int main() {
@@ -15,11 +18,9 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    while(true)
-    {
+    while(true){
         cin >> pw;
-        if (pw == "end")
-        {
+        if (pw == "end"){
             break;
         }
 
@@ -29,36 +30,30 @@ int main() {
         last = -1;
         flag = false;
 
-        for (int i = 0; i < pw.size(); i++)
-        {
+        for (int i = 0; i < pw.size(); i++){
             int temp = pw[i];
 
-            if (isVow(temp))
-            {   
+            if (isVow(temp)){   
                 haveVow = true;
                 vowSeq++;
                 conSeq = 0;
 
-                if (vowSeq >= 3)
-                {
+                if (vowSeq >= 3){
                     flag = true;
                     break;
                 }
             }
-            else
-            {
+            else{
                 vowSeq = 0;
                 conSeq++;
                 
-                if (conSeq >= 3)
-                {
+                if (conSeq >= 3){
                     flag = true;
                     break;
                 }
             }
 
-            if (last == temp && !(last == 'o' || last == 'e'))
-            {
+            if (last == temp && !(temp == 'o' || temp == 'e')){
                 flag = true;
                 break;
             }
@@ -66,17 +61,14 @@ int main() {
             last = temp;
         }
 
-        if (!haveVow)
-        {
+        if (!haveVow){
             flag = true;
         }
 
-        if (flag)
-        {
+        if (flag){
             cout << "<" + pw + "> is not acceptable.\n";
         }
-        else
-        {
+        else{
             cout << "<" + pw + "> is acceptable.\n";
         }
     }

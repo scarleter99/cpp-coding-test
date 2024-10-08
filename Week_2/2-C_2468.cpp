@@ -1,16 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, maxHeight, safe;
+int n, maxH, safe;
 int adj[104][104];
-bool visited[104][104];
+int visited[104][104];
 int answer;
 
 int dy[] = {-1, 0, 1, 0};
 int dx[] = {0, 1, 0, -1};
 
 void dfs(int h, int y, int x) {
-    visited[y][x] = true;
+    visited[y][x] = 1;
 
     for (int i = 0; i < 4; i ++)
     {
@@ -41,11 +41,11 @@ int main() {
         for (int j = 0; j < n; j++)
         {
             cin >> adj[j][i];
-            maxHeight = max(maxHeight, adj[j][i]);
+            maxH = max(maxH, adj[j][i]);
         }
     }
 
-    for (int h = 0; h < maxHeight; h++)
+    for (int h = 0; h < maxH; h++)
     {
         fill(&visited[0][0], &visited[0][0] + 104 * 104, 0);
         safe = 0;
@@ -54,11 +54,12 @@ int main() {
         {
             for (int j = 0; j < n; j++)
             {
-                if (adj[i][j] > h && visited[i][j] == false)
+                if (adj[i][j] <= h || visited[i][j])
                 {
-                    dfs(h, i, j);
-                    safe++;
+                    continue;
                 }
+                dfs(h, i, j);
+                safe++;
             }
         }
 

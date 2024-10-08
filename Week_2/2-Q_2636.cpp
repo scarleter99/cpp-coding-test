@@ -52,7 +52,6 @@ int main() {
             copy(adj[i], adj[i] + m, nAdj[i]);
     }
     
-    int t = 3;
     while(cnt > 0) {
         fill(&visited[0][0], &visited[0][0] + 104 * 104, 0);
         lastCnt = cnt;
