@@ -33,15 +33,16 @@ void eraseFlower(int y, int x) {
         v[ny][nx] = 0;
     }
 }
-void flower(int cnt,int hap) {
+void flower(int cnt,int cost) {
     if (cnt == 3) {
-        ret = min(ret, hap);
+        ret = min(ret, cost);
         return;
     }
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) { 
-            if (check(i, j)) {   
-                flower(cnt+1,hap + setFlower(i, j)); 
+            if (check(i, j)) {
+                int plus = setFlower(i, j);
+                flower(cnt+1,cost + plus); 
                 eraseFlower(i, j);
             }
         }

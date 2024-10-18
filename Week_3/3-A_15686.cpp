@@ -47,7 +47,7 @@ int main(){
 
     for(vector<int> remainChickenList : remainChickenLists){
         int temp = 0;
-        for(pair<int, int> home : homes){
+        for(auto home : homes){
             int _min = 987654321;
             for(int i : remainChickenList){
                 int _dist = abs(home.first - chickens[i].first) + abs(home.second - chickens[i].second);
