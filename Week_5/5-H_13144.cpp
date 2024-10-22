@@ -4,7 +4,7 @@ typedef long long ll;
 
 ll n, lo, hi;
 ll a[100004], cnt[100004];
-ll answer;
+ll ret;
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -23,15 +23,15 @@ int main() {
             hi++;
         }
         else{
-            answer += hi - lo;
+            ret += hi - lo;
             cnt[a[lo]]--;
             lo++;
         }
     }
     
-    answer += ((hi - lo) * (hi - lo + 1) / 2);
+    ret += ((hi - lo) * (hi - lo + 1) / 2);
 
-    cout << answer;
+    cout << ret;
 
     return 0;
 }

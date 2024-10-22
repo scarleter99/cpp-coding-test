@@ -2,7 +2,7 @@
 using namespace std;
 
 int n, num;
-int answer;
+int ret;
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -11,18 +11,18 @@ int main() {
 
     while(cin >> n){
         num = 1;
-        answer = 1;
+        ret = 1;
 
         while(true)
         {
             if (num % n == 0)
             {
-                cout << answer << "\n";
+                cout << ret << "\n";
                 break;
             }
 
             num = (num * 10 + 1) % n;
-            answer++;
+            ret++;
         }
     }
 

@@ -5,7 +5,7 @@ int n, m;
 char adj[54][54];
 int visited[54][54];
 vector<pair<int, int>> lands;
-int answer;
+int ret;
 
 int dy[] = {-1, 0, 1, 0}; 
 int dx[] = {0, 1, 0, -1}; 
@@ -57,13 +57,13 @@ int main() {
                     q.push({ny, nx});
                     visited[ny][nx] = visited[y][x] + 1;
 
-                    answer = max(answer, visited[ny][nx]);
+                    ret = max(ret, visited[ny][nx]);
                 }
             }
         }
     }
 
-    cout << answer - 1;
+    cout << ret - 1;
 
     return 0;
 }

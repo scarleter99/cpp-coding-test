@@ -4,7 +4,7 @@ using namespace std;
 int n, sum, lo, hi;
 int che[4000004];
 vector<int> v;
-int answer;
+int ret;
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -42,11 +42,11 @@ int main() {
         }
 
         if(sum == n){
-            answer++;
+            ret++;
         }
     }
 
-    cout << answer;
+    cout << ret;
 
     return 0;
 }

@@ -3,7 +3,7 @@ using namespace std;
 
 int n, l, r, sum, cnt, flag = 1;
 int adj[54][54], visited[54][54];
-int answer;
+int ret;
 
 int dy[] = {-1, 0, 1, 0};
 int dx[] = {0, 1, 0, -1};
@@ -67,12 +67,12 @@ int main(){
         }
 
         if (flag == 1){
-            answer++;
+            ret++;
         }
 
     } while(flag);
 
-    cout << answer;
+    cout << ret;
 
     return 0;
 }

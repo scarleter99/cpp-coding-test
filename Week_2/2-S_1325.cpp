@@ -4,7 +4,7 @@ using namespace std;
 int n, m, cnt, maxCnt;
 vector<int> adj[10004];
 int visited[10004];
-vector<int> answer;
+vector<int> ret;
 
 void algo(int com){
     visited[com] = 1;
@@ -37,16 +37,16 @@ int main() {
         algo(i);
 
         if (cnt > maxCnt){
-            answer.clear();
-            answer.push_back(i);
+            ret.clear();
+            ret.push_back(i);
             maxCnt = cnt;
         }
         else if (cnt == maxCnt){
-            answer.push_back(i);
+            ret.push_back(i);
         }
     }
 
-    for (int i : answer){
+    for (int i : ret){
         cout << i << " ";
     }
 

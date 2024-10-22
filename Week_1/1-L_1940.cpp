@@ -3,7 +3,7 @@ using namespace std;
 
 int n, m;
 vector<int> ings;
-int answer;
+int ret;
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -27,7 +27,7 @@ int main() {
             
             if (ings[i] + ings[j] == m)
             {
-                answer++;
+                ret++;
                 ings[i] = -1;
                 ings[j] = -1;
                 break;
@@ -35,7 +35,7 @@ int main() {
         }
     }
 
-    cout << answer;
+    cout << ret;
 
     return 0;
 }

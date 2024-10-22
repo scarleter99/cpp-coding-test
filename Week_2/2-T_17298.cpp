@@ -3,7 +3,7 @@ using namespace std;
 
 int n;
 int a[1000004];
-int answer[1000004];
+int ret[1000004];
 stack<int> st;
 
 int main() {
@@ -12,13 +12,13 @@ int main() {
     cout.tie(NULL);
 
     cin >> n;
-    fill(answer, answer + n, -1);
+    fill(ret, ret + n, -1);
 
     for (int i = 0; i < n; i++){
         cin >> a[i];
         
         while(st.size() && a[st.top()] < a[i]){
-            answer[st.top()] = a[i];
+            ret[st.top()] = a[i];
             st.pop();
         }
 
@@ -26,7 +26,7 @@ int main() {
     }
 
     for (int i = 0; i < n; i++){
-        cout << answer[i] << " ";
+        cout << ret[i] << " ";
     }
 
     return 0;

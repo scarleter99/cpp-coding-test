@@ -2,7 +2,7 @@
 using namespace std;
 
 string str, strRev;
-int answer;
+int ret;
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -11,17 +11,17 @@ int main() {
 
     cin >> str;
 
-    answer = 0;
+    ret = 0;
     
     strRev = str;
     reverse(strRev.begin(), strRev.end());
 
     if (str == strRev)
     {
-        answer = 1;
+        ret = 1;
     }
 
-    cout << answer;
+    cout << ret;
 
     return 0;
 }

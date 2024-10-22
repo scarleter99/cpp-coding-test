@@ -4,7 +4,7 @@ using namespace std;
 int n, maxH, safe;
 int adj[104][104];
 int visited[104][104];
-int answer;
+int ret;
 
 int dy[] = {-1, 0, 1, 0};
 int dx[] = {0, 1, 0, -1};
@@ -63,10 +63,10 @@ int main() {
             }
         }
 
-        answer = max(answer, safe);
+        ret = max(ret, safe);
     }
     
-    cout << answer;
+    cout << ret;
 
     return 0;
 }

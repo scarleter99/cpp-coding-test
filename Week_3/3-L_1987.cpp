@@ -4,7 +4,7 @@ using namespace std;
 int r, c;
 int adj[24][24], visited[24][24];
 int alpha[200];
-int answer;
+int ret;
 
 int dy[] = {-1, 0, 1, 0};
 int dx[] = {0, 1, 0, -1};
@@ -27,7 +27,7 @@ void dfs(int y, int x, int cnt){
     }
 
     if (!flag){
-        answer = max(answer, cnt);
+        ret = max(ret, cnt);
     }
     
     alpha[adj[y][x]] = 0;
@@ -50,7 +50,7 @@ int main() {
 
     dfs(0, 0, 0);
 
-    cout << answer;
+    cout << ret;
 
     return 0;
 }

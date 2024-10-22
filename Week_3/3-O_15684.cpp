@@ -3,7 +3,7 @@ using namespace std;
 
 int n, m, h;
 int adj[34][34];
-int answer = 987654321;
+int ret = 987654321;
 
 bool check(){
     for (int x = 1; x <= n; x++){
@@ -26,12 +26,12 @@ bool check(){
 }
 
 void algo(int num, int cnt){
-    if (cnt > 3 || cnt >= answer){
+    if (cnt > 3 || cnt >= ret){
         return;
     }
 
     if (check()){
-        answer = min(answer, cnt);
+        ret = min(ret, cnt);
         return;
     }
 
@@ -62,11 +62,11 @@ int main() {
 
     algo(1, 0);
 
-    if (answer > 3){
+    if (ret > 3){
         cout << -1;
     }
     else{
-        cout << answer;
+        cout << ret;
     }
 
     return 0;

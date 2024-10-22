@@ -3,7 +3,7 @@ using namespace std;
 
 int h, w, last;
 int joi[104][104];
-int answer[104][104];
+int ret[104][104];
 
 int main() {
     ios_base::sync_with_stdio(false);

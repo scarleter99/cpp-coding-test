@@ -11,20 +11,12 @@ int dx[] = {-1, 0, 1, 0};
 int dfs(int y, int x, int now){
     visited[y][x] = now;
 
-    int wall[] = {0, 0, 0, 0};
-    for (int i = 0; i < 4; i++){
-        int temp = 1 << i;
-        if (temp & adj[y][x]){
-            wall[i] = 1;
-        }
-    }
-
     int cnt = 1;
     for (int i = 0; i < 4; i++){
         int ny = y + dy[i];
         int nx = x + dx[i];
 
-        if (wall[i] || visited[ny][nx] || ny < 0 || nx < 0 || ny >= m || ny >= n){
+        if ((adj[y][x] & (1 << i)) || visited[ny][nx] || ny < 0 || nx < 0 || ny >= m || ny >= n){
             continue;
         }
 

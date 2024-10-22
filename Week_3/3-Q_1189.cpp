@@ -4,7 +4,7 @@ using namespace std;
 int r, c, k;
 char adj[10][10];
 int visited[10][10];
-int answer;
+int ret;
 
 int dy[] ={-1, 0, 1, 0};
 int dx[] ={0, 1, 0, -1};
@@ -12,7 +12,7 @@ int dx[] ={0, 1, 0, -1};
 void algo(int y, int x, int cnt){
     if (y == 0 && x == c-1){
         if (cnt == k){
-            answer++;
+            ret++;
         }
         return;
     }
@@ -54,7 +54,7 @@ int main() {
     visited[r-1][0] = 1;
     algo(r-1, 0, 1);
 
-    cout << answer;
+    cout << ret;
 
     return 0;
 }

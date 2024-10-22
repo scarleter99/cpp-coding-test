@@ -3,7 +3,7 @@ using namespace std;
 
 int n, m, cnt, lastCnt;
 int adj[104][104], nAdj[104][104], visited[104][104];
-int answer;
+int ret;
 
 int dy[] = {-1, 0, 1, 0};
 int dx[] = {0, 1, 0, -1};
@@ -55,7 +55,7 @@ int main() {
     while(cnt > 0) {
         fill(&visited[0][0], &visited[0][0] + 104 * 104, 0);
         lastCnt = cnt;
-        answer++;
+        ret++;
 
         dfs(0, 0);
 
@@ -64,7 +64,7 @@ int main() {
         }
     } 
 
-    cout << answer << "\n";
+    cout << ret << "\n";
     cout << lastCnt;
 
     return 0;

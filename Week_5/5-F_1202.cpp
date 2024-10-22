@@ -6,7 +6,7 @@ ll n, k, m, v, c;
 vector<pair<ll, ll>> mv;
 vector<ll> cv;
 priority_queue<ll> pq;
-ll answer;
+ll ret;
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -40,11 +40,11 @@ int main() {
 
         if(pq.size())
         {
-            answer += pq.top();
+            ret += pq.top();
             pq.pop();
         }
     }
 
-    cout << answer;
+    cout << ret;
     return 0;
 }
