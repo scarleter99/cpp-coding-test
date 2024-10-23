@@ -7,13 +7,13 @@ string sTime;
 void printEx(int t)
 {
     string m = "00" + to_string(t / 60);
-    string s = "00" + to_string(t % 60);
-    cout << m.substr(m.size() - 2, 2) + ":" + s.substr(s.size() - 2, 2) + "\n";
+    string str = "00" + to_string(t % 60);
+    cout << m.substr(m.size() - 2, 2) + ":" + str.substr(str.size() - 2, 2) + "\n";
 }
 
-int getTime(string s)
+int getTime(string str)
 {
-    return stoi(s.substr(0, 2)) * 60 + stoi(s.substr(3));
+    return stoi(str.substr(0, 2)) * 60 + stoi(str.substr(3));
 }
 
 void algo()

@@ -4,7 +4,7 @@ using namespace std;
 vector<int> num; 
 vector<char> oper_str; 
 int n, ret = -987654321;
-string s; 
+string str; 
 void fastIO(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL); 
@@ -32,10 +32,10 @@ void go(int here, int _num){
 int main(){
     fastIO();
     cin >> n;  
-    cin >> s; 
+    cin >> str; 
     for(int i = 0; i < n; i++){
-        if(i % 2 == 0)num.push_back(s[i] - '0');
-        else oper_str.push_back(s[i]);
+        if(i % 2 == 0)num.push_back(str[i] - '0');
+        else oper_str.push_back(str[i]);
     } 
     go(0, num[0]);  
     cout << ret << "\n";

@@ -6,7 +6,7 @@ const int dy[4] = {0, 1, 0, -1};
 int visited_swan[max_n][max_n], visited[max_n][max_n], R, C, day, swanY, swanX, y, x;
 char a[max_n][max_n]; 
 queue<pair<int, int>> waterQ, water_tempQ, swanQ, swan_tempQ;
-string s;
+string str;
 void Qclear(queue<pair<int, int>> &q){
    queue<pair<int, int>> empty;
    swap(q,empty);
@@ -49,9 +49,9 @@ int main() {
     cout.tie(NULL);
     cin >> R >> C;
     for(int i = 0; i < R; i++){
-        cin >> s;
+        cin >> str;
         for(int j = 0; j < C; j++){
-            a[i][j] = s[j];
+            a[i][j] = str[j];
             if(a[i][j] == 'L'){swanY = i; swanX = j;}
             if(a[i][j] == '.' || a[i][j] == 'L')visited[i][j] = 1, waterQ.push({i, j});
         }

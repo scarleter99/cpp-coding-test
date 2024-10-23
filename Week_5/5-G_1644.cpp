@@ -17,7 +17,7 @@ int main() {
         if (che[i]){
             continue;
         }
-        for (int j = i * 2; j <= n; j += i){
+        for (int j = i * i; j <= n; j += i){
             che[j] = 1;
         }
     }

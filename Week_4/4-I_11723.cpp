@@ -12,28 +12,28 @@ int main() {
     cin >> m;
 
     for (int i = 0; i < m; i++){
-        string s;
+        string str;
         int temp;
-        cin >> s;
+        cin >> str;
 
-        if (s == "all"){
+        if (str == "all"){
             mask = (1 << 21) - 1;
             continue;
         }
-        else if (s == "empty"){
+        else if (str == "empty"){
             mask = 0;
             continue;
         }
 
         cin >> temp;
 
-        if (s == "add"){
+        if (str == "add"){
             mask |= (1 << temp);
         }
-        else if (s == "remove"){
+        else if (str == "remove"){
             mask &= ~(1 << temp);
         }
-        else if (s == "check"){
+        else if (str == "check"){
             if (mask & (1 << temp)){
                 cout << "1" << "\n";
             }
@@ -41,7 +41,7 @@ int main() {
                 cout << "0" << "\n";
             }
         }
-        else if (s == "toggle"){
+        else if (str == "toggle"){
             mask ^= (1 << temp);
         }
     }

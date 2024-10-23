@@ -9,7 +9,7 @@ int main() {
     int i = 666; 
     for(;; i++)
     {
-        if(to_string(i).find("666") != string::npos)
+        if(to_string(i).find("666") != -1)
             n--;
 
         if(n == 0)
