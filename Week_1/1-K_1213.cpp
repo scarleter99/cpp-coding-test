@@ -5,7 +5,7 @@ string name;
 vector<int> alphaCnts(200);
 char mid;
 int flag;
-string answer;
+string ret;
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -37,23 +37,23 @@ int main() {
 
             for(int j = alphaCnts[i]; j > 0; j -= 2)
             {
-                answer = (char)i + answer;
-                answer += i;
+                ret = (char)i + ret;
+                ret += i;
             }
         }
     }
 
     if (flag > 1)
     {
-        answer = "I'm Sorry Hansoo";
+        ret = "I'm Sorry Hansoo";
     }
 
     if (flag == 1)
     {
-        answer.insert(answer.begin() + (answer.size() / 2), mid);
+        ret.insert(ret.begin() + (ret.size() / 2), mid);
     }
 
-    cout << answer;
+    cout << ret;
 
     return 0;
 }

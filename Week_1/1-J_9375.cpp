@@ -3,7 +3,7 @@ using namespace std;
 
 int t, n;
 string cloth, clothKind;
-int answer;
+int ret;
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -23,15 +23,15 @@ int main() {
             clothKindMap[clothKind]++;
         }
         
-        answer = 1;
+        ret = 1;
         for (auto temp : clothKindMap)
         {
-            answer *= ((int)temp.second + 1);
+            ret *= ((int)temp.second + 1);
         }
 
-        answer--;
+        ret--;
 
-        cout << answer << "\n";
+        cout << ret << "\n";
     }
 
     return 0;

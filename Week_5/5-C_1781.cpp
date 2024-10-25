@@ -4,7 +4,7 @@ using namespace std;
 int n;
 vector<pair<int, int>> v;
 priority_queue<int, vector<int>, greater<int>> pq;
-int answer;
+int ret;
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -29,11 +29,11 @@ int main() {
     }
 
     while(pq.size()){
-        answer += pq.top();
+        ret += pq.top();
         pq.pop();
     }
 
-    cout << answer;
+    cout << ret;
 
     return 0;
 }

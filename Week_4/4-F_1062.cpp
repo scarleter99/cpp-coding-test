@@ -3,7 +3,7 @@ using namespace std;
 
 int n, k;
 int words[54];
-int answer;
+int ret;
 
 int count(int mask){
     int cnt = 0;
@@ -47,9 +47,9 @@ int main() {
         }
     }
 
-    answer = algo(0, k, 0);
+    ret = algo(0, k, 0);
 
-    cout << answer;
+    cout << ret;
 
     return 0;
 }

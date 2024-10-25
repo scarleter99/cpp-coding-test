@@ -3,7 +3,7 @@ using namespace std;
 typedef long long ll;
 
 ll a, b, c;
-ll answer;
+ll ret;
 
 ll algo(ll b)
 {
@@ -29,9 +29,9 @@ int main() {
     
     cin >> a >> b >> c;
     
-    answer = algo(b);
+    ret = algo(b);
 
-    cout << answer;
+    cout << ret;
 
     return 0;
 }

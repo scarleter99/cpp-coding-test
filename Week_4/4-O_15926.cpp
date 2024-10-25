@@ -3,7 +3,7 @@ using namespace std;
 
 int n, now, cnt, _max;
 int a[200004];
-string s;
+string str;
 stack<int> st;
 
 int main() {
@@ -11,10 +11,10 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    cin >> n >> s;
+    cin >> n >> str;
     
     for (int i = 0; i < n; i++){
-        if (s[i] == '('){
+        if (str[i] == '('){
             st.push(i);
         }
         else if (st.size()){

@@ -3,7 +3,7 @@ using namespace std;
 
 int n;
 string pat, file, pre, suf;
-string answer;
+string ret;
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -21,20 +21,20 @@ int main() {
     {
         cin >> file;
 
-        answer = "DA";
+        ret = "DA";
 
         if (file.size() < pre.size() + suf.size())
         {
-            answer = "NE";
+            ret = "NE";
             return 0;
         }
 
         if (pre != file.substr(0, pre.size()) || suf != file.substr(file.size() - suf.size()))
         {
-            answer = "NE";
+            ret = "NE";
         }
 
-        cout << answer << "\n";
+        cout << ret << "\n";
     }
 
     return 0;

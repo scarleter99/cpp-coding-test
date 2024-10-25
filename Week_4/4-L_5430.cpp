@@ -4,7 +4,7 @@ using namespace std;
 int t, n;
 int a[100004];
 string p, line;
-string answer;
+string ret;
 
 int main() {
     ios_base::sync_with_stdio(false);

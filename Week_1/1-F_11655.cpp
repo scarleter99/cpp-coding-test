@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string str, answer;
+string str, ret;
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -13,19 +13,19 @@ int main() {
     {
         if (c >= 'A' && c <= 'Z')
         {
-            answer += (c + 13 <= 'Z' ? c + 13 : c - 13);
+            ret += (c + 13 <= 'Z' ? c + 13 : c - 13);
             continue;
         }
         else if (c >= 'a' && c <= 'z')
         {
-            answer += (c + 13 <= 'z' ? c + 13 : c - 13);
+            ret += (c + 13 <= 'z' ? c + 13 : c - 13);
             continue;
         }
 
-        answer += c;
+        ret += c;
     }
 
-    cout << answer;
+    cout << ret;
 
     return 0;
 }

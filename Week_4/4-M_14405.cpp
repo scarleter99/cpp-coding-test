@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string s;
+string str;
 int flag;
 
 int main() {
@@ -9,25 +9,25 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    cin >> s;
+    cin >> str;
 
-    for (int i = 0; i < s.size(); i++){
-        if (s[i] == 'p'){
-            if (s.substr(i, 2) != "pi"){
+    for (int i = 0; i < str.size(); i++){
+        if (str[i] == 'p'){
+            if (str.substr(i, 2) != "pi"){
                 flag = 1;
                 break;
             }
             i += 1;
         }
-        else if (s[i] == 'k'){
-            if (s.substr(i, 2) != "ka"){
+        else if (str[i] == 'k'){
+            if (str.substr(i, 2) != "ka"){
                 flag = 1;
                 break;
             }
             i += 1;
         }
-        else if (s[i] == 'c'){
-            if (s.substr(i, 3) != "chu"){
+        else if (str[i] == 'c'){
+            if (str.substr(i, 3) != "chu"){
                 flag = 1;
                 break;
             }

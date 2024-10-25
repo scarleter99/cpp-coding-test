@@ -2,7 +2,7 @@
 using namespace std;
 
 int n, m, j, l = 1, r;
-int answer;
+int ret;
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -26,17 +26,17 @@ int main() {
 
         if (temp < l)
         {
-            answer += l - temp;
+            ret += l - temp;
             l -= l - temp;
         }
         else if(temp > r)
         {
-            answer += temp - r;
+            ret += temp - r;
             l += temp - r;
         }
     }
 
-    cout << answer;
+    cout << ret;
 
     return 0;
 }

@@ -2,7 +2,7 @@
 using namespace std;
 
 int t, m, n, k;
-int answer;
+int ret;
 int adj[54][54];
 bool visited[54][54];
 
@@ -43,7 +43,7 @@ int main() {
 
         fill(&adj[0][0], &adj[0][0] + 54 * 54, 0);
         fill(&visited[0][0], &visited[0][0] + 54 * 54, 0);
-        answer = 0;
+        ret = 0;
         
         for (int i = 0; i < k; i++)
         {
@@ -59,12 +59,12 @@ int main() {
                 if (adj[i][j] == 1 && !visited[i][j])
                 {
                     dfs(i, j);
-                    answer++;
+                    ret++;
                 }
             }
         }
 
-        cout << answer << "\n";
+        cout << ret << "\n";
     }
 
     return 0;

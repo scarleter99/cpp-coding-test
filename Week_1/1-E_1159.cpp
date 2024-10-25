@@ -32,9 +32,9 @@ int main() {
 
     sort(answers.begin(), answers.end());
 
-    for (char answer : answers)
+    for (char ret : answers)
     {
-        cout << answer;
+        cout << ret;
     }
 
     return 0;

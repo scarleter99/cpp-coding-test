@@ -3,7 +3,7 @@ using namespace std;
 
 int n;
 char adj[68][68];
-string answer;
+string ret;
 
 void dfs(int y, int x, int size)
 {
@@ -15,19 +15,19 @@ void dfs(int y, int x, int size)
         {
             if (temp != adj[i][j])
             {
-                answer += "(";
+                ret += "(";
                 int nSize = size / 2;
                 dfs(y, x, nSize);
                 dfs(y, x + nSize, nSize);
                 dfs(y + nSize, x, nSize);
                 dfs(y + nSize, x + nSize, nSize);
-                answer += ")";
+                ret += ")";
                 return;
             }
         }
     }
     
-    answer += temp;
+    ret += temp;
 }
 
 int main() {
@@ -49,7 +49,7 @@ int main() {
 
     dfs(0, 0, n);
 
-    cout << answer;
+    cout << ret;
 
     return 0;
 }

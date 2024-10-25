@@ -5,7 +5,7 @@ int n, m;
 int adj[54][54];
 vector<pair<int, int>> homes, chickens;
 vector<vector<int>> remainChickenLists;
-int answer = 987654321;
+int ret = 987654321;
 
 void combi(int start, vector<int> v){
     if(v.size() == m){
@@ -47,7 +47,7 @@ int main(){
 
     for(vector<int> remainChickenList : remainChickenLists){
         int temp = 0;
-        for(pair<int, int> home : homes){
+        for(auto home : homes){
             int _min = 987654321;
             for(int i : remainChickenList){
                 int _dist = abs(home.first - chickens[i].first) + abs(home.second - chickens[i].second);
@@ -55,10 +55,10 @@ int main(){
             }
             temp += _min;
         }
-        answer = min(answer, temp);
+        ret = min(ret, temp);
     }
     
-    cout << answer << "\n";
+    cout << ret << "\n";
 
     return 0;
 }

@@ -2,7 +2,7 @@
 using namespace std;
 
 int t;
-string s;
+string str;
 bool flag;
 
 int main() {
@@ -13,10 +13,10 @@ int main() {
     cin >> t;
 
     while(t--){
-        cin >> s;
+        cin >> str;
 
         int temp = 0;
-        for (char c : s){
+        for (char c : str){
             if (c == '('){
                 temp++;
             }

@@ -3,7 +3,7 @@ using namespace std;
 
 int n;
 string str;
-int answer;
+int ret;
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -31,11 +31,11 @@ int main() {
 
         if (alphaStk.size() == 0)
         {
-            answer++;
+            ret++;
         }
     }
 
-    cout << answer;
+    cout << ret;
 
     return 0;
 }
