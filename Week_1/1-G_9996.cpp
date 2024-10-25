@@ -26,10 +26,8 @@ int main() {
         if (file.size() < pre.size() + suf.size())
         {
             ret = "NE";
-            return 0;
         }
-
-        if (pre != file.substr(0, pre.size()) || suf != file.substr(file.size() - suf.size()))
+        else if (pre != file.substr(0, pre.size()) || suf != file.substr(file.size() - suf.size()))
         {
             ret = "NE";
         }
