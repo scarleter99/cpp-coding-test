@@ -6,7 +6,8 @@ int n, mp, mf, ms, mv;
 int b, c, d, e, ret = INF, sum;
 struct A{
 	int mp, mf, ms, mv, cost; 
-}a[16]; 
+};
+A a[16];
 map<int, vector<vector<int>>> ret_v;
 int main(){
     ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);

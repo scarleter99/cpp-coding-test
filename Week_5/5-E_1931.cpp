@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, from, to, now;
+int n, lo, hi, now;
 vector<pair<int, int>> v;
 int answer;
 
@@ -12,19 +12,19 @@ int main() {
 
     cin >> n;
     for (int i = 0; i < n; i++){
-        cin >> from >> to;
-        v.push_back({to, from});
+        cin >> lo >> hi;
+        v.push_back({hi, lo});
     }
 
     sort(v.begin(), v.end());
 
     for (auto p : v){
-        tie(to, from) = p;
-        if (now > from){
+        tie(hi, lo) = p;
+        if (now > lo){
             continue;
         }
 
-        now = to;
+        now = hi;
         answer++;
     }
 
