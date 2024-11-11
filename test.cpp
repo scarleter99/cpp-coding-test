@@ -8,5 +8,9 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
+    set<int> s = {5, 4, 3};
+
+    cout << *s.begin();
+
     return 0;
 }
