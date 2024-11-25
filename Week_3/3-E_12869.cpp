@@ -10,17 +10,15 @@ int _a[6][3] = {
 	{1, 3, 9}, 
 	{1, 9, 3}
 };
-struct A{
-    int a, b, c; 
-}; 
-queue<A>q; 
+
+queue<vector<int>> q; 
 int solve(int a, int b, int c){
     visited[a][b][c] = 1; 
     q.push({a, b, c}); 
     while(q.size()){
-        int a = q.front().a; 
-        int b = q.front().b; 
-        int c = q.front().c; 
+        int a = q.front()[0]; 
+        int b = q.front()[1]; 
+        int c = q.front()[2]; 
         q.pop();
         if(visited[0][0][0]) break;
         for(int i = 0; i < 6; i++){
@@ -34,6 +32,7 @@ int solve(int a, int b, int c){
     }
     return visited[0][0][0] - 1;   
 }
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);

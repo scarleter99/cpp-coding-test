@@ -32,7 +32,6 @@ int main() {
             continue;
         }
 
-        int cnt = n;
         set<int> onTemp(on);
         for (int j = i + 1; j < k; j++){
             if (onTemp.size() <= 1){
@@ -40,7 +39,6 @@ int main() {
             }
             if (onTemp.count(a[j])){
                 onTemp.erase(a[j]);
-                cnt--;
             }
         }
 
