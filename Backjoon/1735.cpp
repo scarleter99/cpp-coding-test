@@ -5,12 +5,12 @@ const int INF = numeric_limits<int>::max();
 
 int a1, b1, a2, b2;
 
-int gcd(int a, int b){
+int makeGcd(int a, int b){
     if (b == 0){
         return a;
     }
 
-    return gcd(b, a % b);
+    return makeGcd(b, a % b);
 }
 
 int main() {
@@ -20,12 +20,12 @@ int main() {
 
     cin >> a1 >> b1 >> a2 >> b2;
 
-    int b3 = b1 * b2 / gcd(b1, b2);
+    int b3 = b1 * b2 / makeGcd(b1, b2);
     int a3 = a1 * (b3 / b1) + a2 * (b3 / b2);
 
-    int temp = gcd(a3, b3);
+    int gcd = makeGcd(a3, b3);
 
-    cout << a3 / temp << " " << b3 / temp;
+    cout << a3 / gcd << " " << b3 / gcd;
 
     return 0;
 }

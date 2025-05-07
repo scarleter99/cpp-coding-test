@@ -7,8 +7,8 @@ string sTime;
 void printEx(int t)
 {
     string m = "00" + to_string(t / 60);
-    string str = "00" + to_string(t % 60);
-    cout << m.substr(m.size() - 2, 2) + ":" + str.substr(str.size() - 2, 2) + "\n";
+    string s = "00" + to_string(t % 60);
+    cout << m.substr(m.size() - 2, 2) + ":" + s.substr(s.size() - 2, 2) + "\n";
 }
 
 int getTime(string str)

@@ -4,7 +4,7 @@ typedef long long ll;
 const int INF = numeric_limits<int>::max();
 
 string str;
-unordered_set<string> s;
+set<string> s;
 
 int main() {
     ios_base::sync_with_stdio(false);

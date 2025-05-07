@@ -33,7 +33,6 @@ int main() {
 
     cout << visited[k] - 1 << "\n";
 
-    int now = k;
     vector<int> v;
     for(int i = k; i != n; i = history[i]){
         v.push_back(i);

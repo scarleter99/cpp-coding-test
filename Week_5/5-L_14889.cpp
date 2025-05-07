@@ -10,12 +10,10 @@ int subT(vector<int> v){
 
     for(int i = 1; i <= n; i++){
         for(int j = 1; j <= n; j++){
-            if (find(v.begin(), v.end(), i) != v.end() 
-                && find(v.begin(), v.end(), j) != v.end()){
+            if (find(v.begin(), v.end(), i) != v.end() && find(v.begin(), v.end(), j) != v.end()){
                 a += adj[i][j];
             }
-            else if (find(v.begin(), v.end(), i) == v.end() 
-                && find(v.begin(), v.end(), j) == v.end()){
+            else if (find(v.begin(), v.end(), i) == v.end() && find(v.begin(), v.end(), j) == v.end()){
                 b += adj[i][j];
             }
         }

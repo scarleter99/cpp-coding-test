@@ -38,7 +38,7 @@ int main() {
             break;
         }
 
-        if(pq.size())
+        if(pq.size()) // while 아님
         {
             ret += pq.top();
             pq.pop();
