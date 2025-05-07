@@ -6,7 +6,7 @@ int go(int idx, int tree, int cnt){
 	if(cnt < 0) return 0;
 	if(idx == n) return 0;
     int &ret = dp[idx][tree][cnt];
-    if(~ret) return ret;  
+    if(ret != -1) return ret;  
     return ret = max(go(idx + 1, tree^1, cnt - 1), go(idx + 1, tree, cnt)) + (tree == b[idx] - 1); 
 }
 
