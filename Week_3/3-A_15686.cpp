@@ -7,7 +7,7 @@ vector<pair<int, int>> homes, chickens;
 vector<vector<int>> remainChickenLists;
 int ret = 987654321;
 
-void combi(int start, vector<int> v){
+void combi(int start, vector<int>& v){
     if(v.size() == m){
         remainChickenLists.push_back(v);
         return;
@@ -18,6 +18,7 @@ void combi(int start, vector<int> v){
         combi(i, v);
         v.pop_back();
     }
+
     return;
 }
 
@@ -53,12 +54,13 @@ int main(){
                 int _dist = abs(home.first - chickens[i].first) + abs(home.second - chickens[i].second);
                 _min = min(_min, _dist);
             }
+
             temp += _min;
         }
+
         ret = min(ret, temp);
     }
     
     cout << ret << "\n";
-
     return 0;
 }

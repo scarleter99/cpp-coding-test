@@ -62,7 +62,7 @@ int main() {
 
     algo(1, 0);
 
-    if (ret > 3){
+    if (ret == 987654321){
         cout << -1;
     }
     else{
