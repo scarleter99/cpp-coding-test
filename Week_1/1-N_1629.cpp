@@ -5,17 +5,14 @@ typedef long long ll;
 ll a, b, c;
 ll ret;
 
-ll algo(ll b)
-{
-    if (b == 1)
-    {
+ll algo(ll b){
+    if (b == 1){
         return a % c;
     }
 
-    ll ret = (algo(b / 2) * algo(b / 2)) % c;
-
-    if (b % 2)
-    {
+    ll ret = algo(b / 2);
+    ret = ret * ret % c;
+    if (b % 2){
         ret = (ret * a) % c;
     }
 
