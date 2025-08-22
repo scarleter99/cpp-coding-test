@@ -2,19 +2,19 @@
 using namespace std;
 
 int n;
-int adj[24][24];
+int adj[24][24], team[24];
 int ret = 987654321;
 
-int subT(vector<int> v){
+int subT(){
     int a = 0, b = 0;
-
     for(int i = 1; i <= n; i++){
-        for(int j = 1; j <= n; j++){
-            if (find(v.begin(), v.end(), i) != v.end() && find(v.begin(), v.end(), j) != v.end()){
-                a += adj[i][j];
+        for(int j = i + 1; j <= n; j++){
+            if(team[i] && team[j]){
+                a += adj[i][j] + adj[j][i];
             }
-            else if (find(v.begin(), v.end(), i) == v.end() && find(v.begin(), v.end(), j) == v.end()){
-                b += adj[i][j];
+
+            if(team[i] == 0 && team[j] == 0){
+                b += adj[i][j] + adj[j][i];
             }
         }
     }
@@ -22,16 +22,16 @@ int subT(vector<int> v){
     return abs(a - b);
 }
 
-void combi(int s, int cnt, vector<int> v){
-    if (cnt == n / 2){
-        ret = min(ret, subT(v));
+void combi(int s, int cnt){
+    if(cnt == n / 2){
+        ret = min(ret, subT());
         return;
     }
 
     for(int i = s + 1; i <= n; i++){
-        v.push_back(i);
-        combi(i, cnt + 1, v);
-        v.pop_back();
+        team[i] = 1;
+        combi(i, cnt + 1);
+        team[i] = 0;
     }
 }
 
@@ -48,8 +48,7 @@ int main() {
         }
     }
 
-    vector<int> v;
-    combi(0, 0, v);
+    combi(0, 0);
 
     cout << ret;
 
