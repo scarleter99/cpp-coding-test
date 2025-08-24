@@ -1,31 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+typedef long long ll;
 const int INF = 987654321;
 
+int ret;
 int n;
 int adj[16][16], dp[16][1 << 16];
-int ret;
 
 int algo(int node, int mask){
     if(mask == (1 << n) - 1){
         return adj[node][0] ? adj[node][0] : INF;
     }
 
-    if (dp[node][mask] != -1){
+    if(dp[node][mask] != -1){
         return dp[node][mask];
     }
 
     int _min = INF;
-    for (int i = 0; i < n; i++){
-        if ((1 << i) & mask){
+    for(int i = 1; i < n; i++){
+        if((1 << i) & mask){
             continue;
         }
-        if (adj[node][i] == 0){
+        
+        if(adj[node][i] == 0){
             continue;
         }
 
-        _min = min(_min, algo(i , mask | (1 << i)) + adj[node][i]);
+        _min = min(_min, algo(i, mask | (1 << i)) + adj[node][i]);
     }
 
     dp[node][mask] = _min;
@@ -48,8 +49,7 @@ int main() {
 
     fill(&dp[0][0], &dp[0][0] + 16 * (1 << 16), -1);
 
-    ret = algo(0, 1);
-    cout << ret;
+    cout << algo(0, 1);
 
     return 0;
 }
