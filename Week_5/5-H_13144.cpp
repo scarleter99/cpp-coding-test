@@ -31,7 +31,7 @@ int main() {
     
     ret += ((hi - lo) * (hi - lo + 1) / 2);
 
-    cout << ((hi - lo) * (hi - lo + 1) / 2) << ret;
+    cout << ret;
 
     return 0;
 }

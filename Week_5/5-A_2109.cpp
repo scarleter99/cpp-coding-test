@@ -13,15 +13,15 @@ int main() {
 
     cin >> n;
     for(int i = 0; i < n; i++){
-        int d, p;
-        cin >> d >> p;
-        v.push_back({p, d});
+        int p, d;
+        cin >> p >> d;
+        v.push_back({d, p});
     }
 
     sort(v.begin(), v.end());
-    for (pair<int, int> p : v){
-        pq.push(p.second);
-        while (pq.size() > p.first){
+    for (pair<int, int> d : v){
+        pq.push(d.second);
+        while (pq.size() > d.first){
             pq.pop();
         }
     }
