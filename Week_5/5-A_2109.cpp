@@ -19,9 +19,9 @@ int main() {
     }
 
     sort(v.begin(), v.end());
-    for (pair<int, int> d : v){
-        pq.push(d.second);
-        while (pq.size() > d.first){
+    for (pair<int, int> i : v){
+        pq.push(i.second);
+        while (pq.size() > i.first){
             pq.pop();
         }
     }
